@@ -5,7 +5,6 @@ import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script"
 import "./globals.css"
 import GlobalInterstitialProvider from "@/components/InterstitialAd"
-import GlobalAdTrigger from "@/components/GlobalAdTrigger"
 // import InterstitialAd from "@/components/InterstitialAd"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -77,7 +76,6 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
-        <GlobalAdTrigger />
 
         {/* Disable Inspect Element & Right Click */}
         {/* <Script id="disable-inspect" strategy="afterInteractive">
