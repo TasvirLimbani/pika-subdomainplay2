@@ -76,9 +76,9 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
-        <GlobalInterstitialProvider>
+        {/* <GlobalInterstitialProvider>
           {children}
-        </GlobalInterstitialProvider>
+        </GlobalInterstitialProvider> */}
 
         {/* Disable Inspect Element & Right Click */}
         {/* <Script id="disable-inspect" strategy="afterInteractive">
