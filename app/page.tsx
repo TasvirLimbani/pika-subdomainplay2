@@ -374,7 +374,7 @@ export default function Home() {
 
           <div className="sticky top-0  z-10 bg-slate-900/10 backdrop-blur-md p-4 flex justify-between items-center">
             <div className="text-white font-semibold flex gap-2 mx-auto">
-              <img className="h-10 w-10" src="/Logo.png" alt="Logo" />
+              <img className="h-10 w-10" src="/hLogo.png" alt="Logo" />
               <span className=" m-auto text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent hidden sm:inline">
                 PikaShowGames
               </span>

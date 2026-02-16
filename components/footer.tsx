@@ -22,7 +22,7 @@ export function Footer() {
             <div className="md:col-span-1">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white">
-                  <img src="/Logo.png" alt="Logo" />
+                  <img src="/hLogo.png" alt="Logo" />
                 </div>
                 <h3 className="text-2xl font-bold">PikaShowGames</h3>
               </div>

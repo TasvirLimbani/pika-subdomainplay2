@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "PikaShowGames",
     images: [
       {
-        url: "/Logo.png",
+        url: "/hLogo.png",
         width: 1200,
         height: 630,
         alt: "PikaShowGames Thumbnail",

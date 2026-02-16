@@ -12,13 +12,13 @@ const firebaseConfig = {
   // appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
   // measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 
-  apiKey:  "AIzaSyAi_lMUmlK8cY5gek_Fnkez5Xu9qbMfOzE",
-  authDomain: "pikashowgames-f8d4c.firebaseapp.com",
-  projectId: "pikashowgames-f8d4c",
-  storageBucket: "pikashowgames-f8d4c.firebasestorage.app",
-  messagingSenderId: "900333122700",
-  appId: "1:900333122700:web:beb3523797a75c653337a9",
-  measurementId: "G-6N8ZC8F8YC",
+  apiKey: "AIzaSyA-s014ClBZhxLHAiOCBkQD1s4JAcg67sM",
+  authDomain: "pikashow-game-play2.firebaseapp.com",
+  projectId: "pikashow-game-play2",
+  storageBucket: "pikashow-game-play2.firebasestorage.app",
+  messagingSenderId: "328344071461",
+  appId: "1:328344071461:web:fd412c6eb368dfc6977ecc",
+  measurementId: "G-NXQY37K4SC"
 }
 
 const app = initializeApp(firebaseConfig)
