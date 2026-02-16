@@ -102,3 +102,117 @@
 //         </div>
 //     );
 // }
+
+
+"use client"
+
+import { useEffect, useState } from "react"
+
+export default function GlobalInterstitialProvider({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  const [showAd, setShowAd] = useState(false)
+  const [canClose, setCanClose] = useState(false)
+  const [countdown, setCountdown] = useState(5)
+  const [pendingClick, setPendingClick] = useState<null | (() => void)>(null)
+
+  const vastUrl =
+    "https://pubads.g.doubleclick.net/gampad/ads?iu=/229445249,23315340101/highR_RS88_PikaShow_552_640x480_16396_140226&description_url=https%3A%2F%2Fwww.pikashowgames.com%2F&tfcd=0&npa=0&sz=640x480&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&vad_type=linear"
+
+  // 5 sec countdown
+  useEffect(() => {
+    if (!showAd) return
+
+    setCountdown(5)
+    setCanClose(false)
+
+    const interval = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval)
+          setCanClose(true)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [showAd])
+
+  // Global click interceptor
+  useEffect(() => {
+    const handleClick = (e: any) => {
+      const target = e.target.closest("button, a")
+
+      if (!target) return
+      if (showAd) return
+      if (target.dataset.noad === "true") return
+
+      e.preventDefault()
+
+      setPendingClick(() => () => {
+        if (target.tagName === "A") {
+          window.location.href = target.href
+        } else {
+          target.click()
+        }
+      })
+
+      setShowAd(true)
+    }
+
+    document.addEventListener("click", handleClick)
+
+    return () => document.removeEventListener("click", handleClick)
+  }, [showAd])
+
+  const handleClose = () => {
+    if (!canClose) return
+
+    setShowAd(false)
+
+    if (pendingClick) {
+      setTimeout(() => {
+        pendingClick()
+      }, 300)
+    }
+  }
+
+  return (
+    <>
+      {children}
+
+      {showAd && (
+        <div className="fixed inset-0 z-[99999] bg-black/95 flex items-center justify-center">
+          <div className="relative w-[90%] max-w-[640px] bg-black rounded-xl overflow-hidden">
+
+            {!canClose && (
+              <div className="absolute top-3 right-3 bg-black/70 text-white px-3 py-1 rounded">
+                Skip in {countdown}s
+              </div>
+            )}
+
+            {canClose && (
+              <button
+                onClick={handleClose}
+                className="absolute top-3 right-3 bg-red-600 text-white px-3 py-1 rounded"
+              >
+                Skip Ad
+              </button>
+            )}
+
+            <video
+              autoPlay
+              controls
+              className="w-full h-auto"
+              src={vastUrl}
+            />
+          </div>
+        </div>
+      )}
+    </>
+  )
+}

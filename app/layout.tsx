@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script"
 import "./globals.css"
+import GlobalInterstitialProvider from "@/components/InterstitialAd"
 // import InterstitialAd from "@/components/InterstitialAd"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -75,9 +76,12 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
+        <GlobalInterstitialProvider>
+          {children}
+        </GlobalInterstitialProvider>
 
         {/* Disable Inspect Element & Right Click */}
-        <Script id="disable-inspect" strategy="afterInteractive">
+        {/* <Script id="disable-inspect" strategy="afterInteractive">
           {`
     // Disable right-click
     document.addEventListener('contextmenu', event => event.preventDefault());
@@ -111,7 +115,7 @@ export default function RootLayout({
     };
     setInterval(detectDevTools, 1000);
   `}
-        </Script>
+        </Script> */}
         {/* <InterstitialAd /> */}
       </body>
     </html>
