@@ -7,6 +7,7 @@ import { GameCard } from "@/components/game-card"
 import { Footer } from "@/components/footer"
 import type { Game } from "@/lib/types"
 import { TrendingUp, Flame } from "lucide-react"
+import GoogleAd from "@/components/GoogleAd"
 
 export default function TrendingPage() {
   const [games, setGames] = useState<Game[]>([])
@@ -35,7 +36,7 @@ export default function TrendingPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex flex-col">
       <Header />
       <CategoryFilter selectedCategory={selectedCategory} onCategoryChange={setSelectedCategory} />
-
+      <GoogleAd />
       <main className="max-w-7xl mx-auto px-4 py-12 flex-1 w-full">
         <div className="mb-8 flex items-center gap-3">
           <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg">
@@ -66,7 +67,7 @@ export default function TrendingPage() {
           </div>
         )}
       </main>
-
+      <GoogleAd />
       <Footer />
     </div>
   )

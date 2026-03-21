@@ -469,7 +469,7 @@ export default function Home() {
               )}
             </div>
           </div>
-
+          <GoogleAd />
           <div className="ml-3">
             <h1 className="mt-10 text-2xl">Popular Games</h1>
             <div className="flex gap-5 flex-wrap mt-5">
@@ -548,7 +548,7 @@ export default function Home() {
               Simulation Games</p>
             <h1 className="text-2xl mt-7">Why Are These Games Popular?</h1>
             <p className="text-gray-500 mt-3">HTML5 technology enables accessible, responsive, and visually clear gameplay. Many titles are lightweight and optimized for quick startup, while intuitive controls help new and returning players enjoy short or extended sessions.</p>
-
+            <GoogleAd />
             <h1 className="text-2xl mt-7">FAQs</h1>
             <p className="mt-3">Q: Do I need to download software to play?
               A: Most games run in your browser. If a title needs anything additional, you’ll see a clear prompt.
