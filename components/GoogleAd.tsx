@@ -1,63 +1,46 @@
-"use client";
+"use client"
 
-import { useEffect } from "react";
-import Script from "next/script";
+import { useEffect } from "react"
+import Script from "next/script"
 
 declare global {
   interface Window {
-    googletag: any;
-    gptBannerDefined?: boolean;
+    googletag: any
   }
 }
 
-export default function GPTBannerAd() {
+export default function GoogleAd() {
   useEffect(() => {
-    if (!window) return;
-
-    window.googletag = window.googletag || { cmd: [] };
-
-    window.googletag.cmd.push(function () {
-      // ✅ Prevent duplicate slot creation
-      if (!window.gptBannerDefined) {
+    if (typeof window !== "undefined" && window.googletag) {
+      window.googletag.cmd.push(function () {
         window.googletag
           .defineSlot(
             "/229445249,23315340101/highR_RS88_PikaShow_552_300x250_16596_200326",
-            [300, 250],
+            [336, 280],
             "gpt-passback-16596"
           )
-          .addService(window.googletag.pubads());
+          .addService(window.googletag.pubads())
 
-        window.googletag.pubads().set(
-          "page_url",
-          "https://www.pikashowgames.com/"
-        );
-
-        window.googletag.enableServices();
-
-        window.gptBannerDefined = true;
-      }
-
-      window.googletag.display("gpt-passback-16596");
-    });
-  }, []);
+        window.googletag.pubads().set("page_url", "https://www.pikashowgames.com/")
+        window.googletag.enableServices()
+        window.googletag.display("gpt-passback-16397")
+      })
+    }
+  }, [])
 
   return (
     <>
-      {/* Load GPT library once */}
+      {/* Load GPT Script */}
       <Script
         src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
         strategy="afterInteractive"
       />
 
-      {/* Banner Container */}
+      {/* Ad Container */}
       <div
-        id="gpt-passback-16596"
-        style={{
-          width: 300,
-          height: 250,
-          margin: "0 auto",
-        }}
+        id="gpt-passback-16397"
+        style={{ width: 336, height: 280 }}
       />
     </>
-  );
+  )
 }

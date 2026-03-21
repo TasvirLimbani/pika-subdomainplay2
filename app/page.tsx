@@ -12,6 +12,7 @@ import { Gamepad2 } from 'lucide-react';
 import Script from 'next/script'
 import Link from "next/link"
 import GptAd from "@/components/GptAd"
+import GoogleAd from "@/components/GoogleAd"
 
 export const dynamic = "force-dynamic"
 
@@ -553,7 +554,7 @@ export default function Home() {
             <h1 className="text-2xl mt-7">Why Are These Games Popular?</h1>
             <p className="text-gray-500 mt-3">HTML5 technology enables accessible, responsive, and visually clear gameplay. Many titles are lightweight and optimized for quick startup, while intuitive controls help new and returning players enjoy short or extended sessions.</p>
             <div className="mb-8 flex justify-center">
-              <GptAd />
+              <GoogleAd />
             </div>
             <h1 className="text-2xl mt-7">FAQs</h1>
             <p className="mt-3">Q: Do I need to download software to play?
