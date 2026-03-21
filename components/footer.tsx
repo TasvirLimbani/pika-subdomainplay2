@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Facebook, Twitter, Instagram, Linkedin, Paintbrush as Pinterest } from "lucide-react"
 import GoogleAd from "./GoogleAd"
+import GptAd from "./GptAd"
 
 export function Footer() {
   return (
@@ -18,7 +19,9 @@ export function Footer() {
           <p>Welcome to PikaShowGames, the ultimate destination to play free online games instantly! Our browser gaming platform offers a massive collection of HTML5 games that run smoothly on desktop and mobile—no downloads, no installations, just pure fun. Discover hundreds of exciting titles including action games, racing games, puzzle challenges, and adventure quests, all free to play online. At PikaShowGames, we make online gaming fast, safe, and accessible for everyone. Whether you’re killing time or chasing high scores, you’ll find endless entertainment on our free gaming website. Join thousands of players worldwide and enjoy the best online web games anytime, anywhere. Play instantly and experience the thrill of gaming like never before at PikaShowGames.com!</p>
           <br />
           <p>PikaShowGames is your one-stop online gaming platform where you can play games online for free with zero downloads. Enjoy a growing library of browser games across popular categories like sports, shooting, strategy, arcade, and multiplayer games. Each game is powered by HTML5 technology, ensuring fast performance and smooth gameplay on any device. Our goal is to provide players with high-quality, ad-light, and secure web games for all age groups. We update our site regularly with trending new releases so you always have something fresh to play. If you love free online games, PikaShowGames is the best place to explore, compete, and have fun every day—directly in your browser!</p>
-          <GoogleAd />
+          <div className="mb-8 flex justify-center">
+            <GptAd />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 mt-12">
             {/* Brand section */}
             <div className="md:col-span-1">

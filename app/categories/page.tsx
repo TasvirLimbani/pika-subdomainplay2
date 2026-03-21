@@ -8,6 +8,7 @@ import type { Category } from "@/lib/types"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import GoogleAd from "@/components/GoogleAd"
+import GptAd from "@/components/GptAd"
 
 export default function CategoriesPage() {
   const [categories, setCategories] = useState<Category[]>([])
@@ -34,7 +35,9 @@ export default function CategoriesPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex flex-col">
       <Header />
       <CategoryFilter selectedCategory={selectedCategory} onCategoryChange={setSelectedCategory} />
-      <GoogleAd />
+      <div className="mb-8 flex justify-center">
+        <GptAd />
+      </div>
       <main className="max-w-7xl mx-auto px-4 py-12 flex-1 w-full">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">Browse Categories</h1>
@@ -68,7 +71,9 @@ export default function CategoriesPage() {
           </div>
         )}
       </main>
-      <GoogleAd />
+      <div className="mb-8 flex justify-center">
+        <GptAd />
+      </div>
       <Footer />
     </div>
   )

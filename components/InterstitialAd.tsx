@@ -38,33 +38,49 @@ export default function InterstitialAd() {
     setShow(true);
     document.body.style.overflow = "hidden";
 
-    setTimeout(() => {
-      window.googletag = window.googletag || { cmd: [] };
+    window.googletag = window.googletag || { cmd: [] };
 
-      window.googletag.cmd.push(function () {
-        // ✅ prevent redefining slot error
-        if (!window.gptSlotDefined) {
-          window.googletag
-            .defineSlot(
-              "/229445249,23315340101/highR_RS88_PikaShow_552_640x480_16595_200326",
-              [640, 480],
-              "gpt-passback-16595"
-            )
-            .addService(window.googletag.pubads());
+    window.googletag.cmd.push(function () {
+      const pubads = window.googletag.pubads();
 
-          window.googletag.pubads().set(
-            "page_url",
-            "https://www.pikashowgames.com/"
-          );
+      // ✅ attach listener BEFORE refresh
+      pubads.addEventListener("slotRenderEnded", function (event: any) {
+        if (event.slot.getSlotElementId() !== "gpt-passback-16595") return;
 
-          window.googletag.enableServices();
-
-          window.gptSlotDefined = true;
+        // ❌ No fill → close popup automatically
+        if (event.isEmpty) {
+          console.log("Empty ad returned");
+          closeAd();
         }
-
-        window.googletag.display("gpt-passback-16595");
       });
-    }, 300);
+
+      // Define slot once
+      if (!window.gptSlotDefined) {
+        window.gptSlot = window.googletag
+          .defineSlot(
+            "/229445249,23315340101/highR_RS88_PikaShow_552_640x480_16595_200326",
+            [640, 480],
+            "gpt-passback-16595"
+          )
+          .addService(pubads);
+
+        pubads.set(
+          "page_url",
+          "https://www.pikashowgames.com/"
+        );
+
+        window.googletag.enableServices();
+        window.gptSlotDefined = true;
+      }
+
+      // ⭐ ALWAYS refresh (important)
+      pubads.refresh([window.gptSlot]);
+    });
+  };
+
+  const closeAd = () => {
+    setShow(false);
+    document.body.style.overflow = "";
   };
 
   /* ---------------- COUNTDOWN ---------------- */

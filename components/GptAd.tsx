@@ -15,9 +15,9 @@ export default function GptAd() {
       window.googletag.cmd.push(function () {
         window.googletag
           .defineSlot(
-            "/229445249,23315340101/highR_RS88_PikaShow_552_336x280_16397_140226",
-            [336, 280],
-            "gpt-passback-16397"
+            "/229445249,23315340101/highR_RS88_PikaShow_552_300x250_16596_200326",
+            [300, 250],
+            "gpt-passback-16596"
           )
           .addService(window.googletag.pubads())
 
