@@ -139,7 +139,7 @@ export default function GamePage() {
       <main className="max-w-7xl mx-auto px-4 py-12 flex-1">
         {/* Game Header */}
         <div className="mb-8 flex justify-center">
-          <GptAd />
+          {/* <GptAd /> */}
         </div>
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{game.name}</h1>

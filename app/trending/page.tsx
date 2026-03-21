@@ -38,7 +38,7 @@ export default function TrendingPage() {
       <Header />
       <CategoryFilter selectedCategory={selectedCategory} onCategoryChange={setSelectedCategory} />
       <div className="mb-8 flex justify-center">
-        <GptAd />
+        {/* <GptAd /> */}
       </div>
       <main className="max-w-7xl mx-auto px-4 py-12 flex-1 w-full">
         <div className="mb-8 flex items-center gap-3">
@@ -71,7 +71,7 @@ export default function TrendingPage() {
         )}
       </main>
       <div className="mb-8 flex justify-center">
-        <GptAd />
+        {/* <GptAd /> */}
       </div>
       <Footer />
     </div>

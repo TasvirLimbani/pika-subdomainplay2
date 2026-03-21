@@ -36,7 +36,7 @@ export default function CategoriesPage() {
       <Header />
       <CategoryFilter selectedCategory={selectedCategory} onCategoryChange={setSelectedCategory} />
       <div className="mb-8 flex justify-center">
-        <GptAd />
+        {/* <GptAd /> */}
       </div>
       <main className="max-w-7xl mx-auto px-4 py-12 flex-1 w-full">
         <div className="mb-8">
@@ -72,7 +72,7 @@ export default function CategoriesPage() {
         )}
       </main>
       <div className="mb-8 flex justify-center">
-        <GptAd />
+        {/* <GptAd /> */}
       </div>
       <Footer />
     </div>
