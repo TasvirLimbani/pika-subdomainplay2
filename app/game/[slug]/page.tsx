@@ -15,6 +15,7 @@ import { doc, updateDoc, arrayUnion, Timestamp } from "firebase/firestore"
 import { Button } from "@/components/ui/button"
 import { Share2, Heart, BookOpen } from "lucide-react"
 import GptAd from "@/components/GptAd"
+import GoogleAd from "@/components/GoogleAd"
 
 export default function GamePage() {
   const params = useParams()
@@ -139,7 +140,7 @@ export default function GamePage() {
       <main className="max-w-7xl mx-auto px-4 py-12 flex-1">
         {/* Game Header */}
         <div className="mb-8 flex justify-center">
-          {/* <GptAd /> */}
+          <GoogleAd />
         </div>
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{game.name}</h1>

@@ -16,7 +16,7 @@ export default function GoogleAd() {
         window.googletag
           .defineSlot(
             "/229445249,23315340101/highR_RS88_PikaShow_552_300x250_16596_200326",
-            [336, 280],
+            [300, 250],
             "gpt-passback-16596"
           )
           .addService(window.googletag.pubads())
