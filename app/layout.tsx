@@ -71,6 +71,10 @@ export default function RootLayout({
           src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
           crossOrigin="anonymous"
         />
+        <Script
+          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          strategy="afterInteractive"
+        />
 
       </head>
       <body className={`font-sans antialiased`}>
