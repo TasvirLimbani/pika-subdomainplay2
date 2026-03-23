@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useId } from "react"
-import Script from "next/script"
 
 declare global {
   interface Window {
@@ -10,39 +9,40 @@ declare global {
 }
 
 export default function GptAd() {
-  const adId = "gpt-ad-" + useId().replace(/:/g, "") // unique ID
+  const adId = "gpt-ad-" + useId().replace(/:/g, "")
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.googletag = window.googletag || { cmd: [] }
+    if (typeof window === "undefined") return
 
-      window.googletag.cmd.push(function () {
-        const slot = window.googletag.defineSlot(
-          "/229445249,23315340101/highR_RS88_PikaShow_552_336x280_16397_140226",
-          [336, 280],
-          adId
-        )
+    window.googletag = window.googletag || { cmd: [] }
 
-        if (slot) {
-          slot.addService(window.googletag.pubads())
-        }
+    window.googletag.cmd.push(function () {
+      const slot = window.googletag.defineSlot(
+        "/229445249,23315340101/highR_RS88_PikaShow_552_336x280_16397_140226",
+        [336, 280],
+        adId
+      )
 
-        window.googletag.pubads().set("page_url", window.location.href)
+      if (!slot) return
 
-        window.googletag.enableServices()
-        window.googletag.display(adId)
-      })
-    }
+      slot.addService(window.googletag.pubads())
+
+      // ✅ IMPORTANT: display + refresh
+      window.googletag.display(adId)
+
+      // 🔥 THIS FIXES SECOND AD NOT SHOWING
+      window.googletag.pubads().refresh([slot])
+    })
   }, [adId])
 
   return (
-    <>
-      <Script
-        src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-        strategy="afterInteractive"
-      />
-
-      <div id={adId} style={{ width: 336, height: 280 }} />
-    </>
+    <div
+      id={adId}
+      style={{
+        width: 336,
+        height: 280,
+        margin: "0 auto",
+      }}
+    />
   )
 }
