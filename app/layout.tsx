@@ -64,22 +64,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* ✅ Google AdSense Script */}
+        {/* ✅ Load GPT Script ONLY ONCE */}
         <Script
           src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-          strategy="lazyOnload" // 🔥 faster page load
+          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
 
+        {/* ✅ Initialize GPT ONLY ONCE */}
         <Script id="gpt-init" strategy="afterInteractive">
           {`
-    window.googletag = window.googletag || { cmd: [] };
+            window.googletag = window.googletag || { cmd: [] };
 
-    window.googletag.cmd.push(function() {
-      window.googletag.pubads().enableSingleRequest();
-      window.googletag.pubads().collapseEmptyDivs(); // 🔥 prevents blank space
-      window.googletag.enableServices();
-    });
-  `}
+            window.googletag.cmd.push(function() {
+              window.googletag.pubads().enableSingleRequest();
+              window.googletag.enableServices();
+            });
+          `}
         </Script>
 
       </head>
