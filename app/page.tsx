@@ -13,6 +13,7 @@ import Script from 'next/script'
 import Link from "next/link"
 import GptAd from "@/components/GptAd"
 import GoogleAd from "@/components/GoogleAd"
+import { Game } from "@/lib/types"
 
 export const dynamic = "force-dynamic"
 

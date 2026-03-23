@@ -65,16 +65,24 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* ✅ Google AdSense Script */}
+        {/* ✅ Load GPT Script ONLY ONCE */}
         <Script
-          async
-          strategy="afterInteractive"
           src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
-        <Script
-          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-          strategy="afterInteractive"
-        />
+
+        {/* ✅ Initialize GPT ONLY ONCE */}
+        <Script id="gpt-init" strategy="afterInteractive">
+          {`
+            window.googletag = window.googletag || { cmd: [] };
+
+            window.googletag.cmd.push(function() {
+              window.googletag.pubads().enableSingleRequest();
+              window.googletag.enableServices();
+            });
+          `}
+        </Script>
 
       </head>
       <body className={`font-sans antialiased`}>
