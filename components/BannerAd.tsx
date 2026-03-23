@@ -18,7 +18,7 @@ export default function BannerAd() {
 
       window.googletag.cmd.push(function () {
         const slot = window.googletag.defineSlot(
-          "/229445249,23315340101/highR_RS88_PikaShow_552_336x280_16397_140226",
+          "/229445249,23315340101/highR_RS88_PikaShow_552_640x480_16595_200326",
           [336, 280],
           adId
         )
