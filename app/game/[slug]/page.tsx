@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button"
 import { Share2, Heart, BookOpen } from "lucide-react"
 import GptAd from "@/components/GptAd"
 import GoogleAd from "@/components/GoogleAd"
+import BannerAd from "@/components/BannerAd"
 
 export default function GamePage() {
   const params = useParams()
@@ -141,6 +142,7 @@ export default function GamePage() {
         {/* Game Header */}
         <div className="mb-8 flex justify-center">
           <GoogleAd />
+          <BannerAd />
         </div>
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{game.name}</h1>
