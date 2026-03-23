@@ -14,6 +14,7 @@ import Link from "next/link"
 import GptAd from "@/components/GptAd"
 import GoogleAd from "@/components/GoogleAd"
 import { Game } from "@/lib/types"
+import BannerAd from "@/components/BannerAd"
 
 export const dynamic = "force-dynamic"
 
@@ -474,7 +475,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mb-8 flex justify-center">
-            <GptAd />
+            <BannerAd />
           </div>
           <div className="ml-3">
             <h1 className="mt-10 text-2xl">Popular Games</h1>

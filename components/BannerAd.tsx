@@ -9,7 +9,7 @@ declare global {
   }
 }
 
-export default function GptAd() {
+export default function BannerAd() {
   const adId = "gpt-ad-" + useId().replace(/:/g, "") // unique ID
 
   useEffect(() => {
