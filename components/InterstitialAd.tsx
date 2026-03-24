@@ -24,7 +24,7 @@ export default function InterstitialAd() {
       localStorage.setItem("click_count", clickCount.toString());
 
       // show ad every 4th click
-      if (clickCount % 2 === 0) {
+      if (clickCount % 3 === 0) {
         openAd();
       }
     };
