@@ -15,6 +15,7 @@ import GptAd from "@/components/GptAd"
 import GoogleAd from "@/components/GoogleAd"
 import { Game } from "@/lib/types"
 import BannerAd from "@/components/BannerAd"
+import ThreeAd from "@/components/ThreeAd"
 
 export const dynamic = "force-dynamic"
 
@@ -492,6 +493,9 @@ export default function Home() {
 
 
             </div>
+          </div>
+          <div className="mb-8 flex justify-center">
+            <ThreeAd />
           </div>
           <hr className="mt-10" />
 

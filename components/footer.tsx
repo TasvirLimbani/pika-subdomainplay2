@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Facebook, Twitter, Instagram, Linkedin, Paintbrush as Pinterest } from "lucide-react"
 import GoogleAd from "./GoogleAd"
 import GptAd from "./GptAd"
+import ThreeAd from "./ThreeAd"
 
 export function Footer() {
   return (
@@ -20,7 +21,7 @@ export function Footer() {
           <br />
           <p>PikaShowGames is your one-stop online gaming platform where you can play games online for free with zero downloads. Enjoy a growing library of browser games across popular categories like sports, shooting, strategy, arcade, and multiplayer games. Each game is powered by HTML5 technology, ensuring fast performance and smooth gameplay on any device. Our goal is to provide players with high-quality, ad-light, and secure web games for all age groups. We update our site regularly with trending new releases so you always have something fresh to play. If you love free online games, PikaShowGames is the best place to explore, compete, and have fun every day—directly in your browser!</p>
           <div className="mb-8 flex justify-center">
-            <GoogleAd />
+            <ThreeAd />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 mt-12">
             {/* Brand section */}

@@ -71,6 +71,7 @@ export default function CategoriesPage() {
               </Link>
             ))}
           </div>
+          
         )}
       </main>
       <div className="mb-8 flex justify-center">

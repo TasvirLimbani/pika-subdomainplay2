@@ -10,6 +10,7 @@ import { TrendingUp, Flame } from "lucide-react"
 import GoogleAd from "@/components/GoogleAd"
 import GptAd from "@/components/GptAd"
 import BannerAd from "@/components/BannerAd"
+import ThreeAd from "@/components/ThreeAd"
 
 export default function TrendingPage() {
   const [games, setGames] = useState<Game[]>([])
@@ -52,7 +53,9 @@ export default function TrendingPage() {
             <p className="text-slate-400">Most played and loved games right now</p>
           </div>
         </div>
-
+        <div className="mb-8 flex justify-center">
+            <ThreeAd />
+          </div>
         {isLoading ? (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {[...Array(20)].map((_, i) => (
