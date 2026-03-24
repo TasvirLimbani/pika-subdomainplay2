@@ -9,6 +9,7 @@ import type { Game } from "@/lib/types"
 import { TrendingUp, Flame } from "lucide-react"
 import GoogleAd from "@/components/GoogleAd"
 import GptAd from "@/components/GptAd"
+import BannerAd from "@/components/BannerAd"
 
 export default function TrendingPage() {
   const [games, setGames] = useState<Game[]>([])
@@ -39,6 +40,7 @@ export default function TrendingPage() {
       <CategoryFilter selectedCategory={selectedCategory} onCategoryChange={setSelectedCategory} />
       <div className="mb-8 flex justify-center">
         {/* <GptAd /> */}
+        <BannerAd />
       </div>
       <main className="max-w-7xl mx-auto px-4 py-12 flex-1 w-full">
         <div className="mb-8 flex items-center gap-3">
@@ -71,7 +73,7 @@ export default function TrendingPage() {
         )}
       </main>
       <div className="mb-8 flex justify-center">
-        {/* <GptAd /> */}
+        <GptAd />
       </div>
       <Footer />
     </div>

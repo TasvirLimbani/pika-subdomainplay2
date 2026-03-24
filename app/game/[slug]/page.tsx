@@ -218,7 +218,7 @@ export default function GamePage() {
             </div>
           )}
         </div>
-
+        <GptAd />
         {/* Related Games */}
         {relatedGames.length > 0 && (
           <div>
