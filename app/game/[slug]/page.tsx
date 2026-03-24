@@ -15,7 +15,6 @@ import { doc, updateDoc, arrayUnion, Timestamp } from "firebase/firestore"
 import { Button } from "@/components/ui/button"
 import { Share2, Heart, BookOpen } from "lucide-react"
 import GptAd from "@/components/GptAd"
-import GoogleAd from "@/components/GoogleAd"
 import BannerAd from "@/components/BannerAd"
 import ThreeAd from "@/components/ThreeAd"
 
@@ -141,10 +140,11 @@ export default function GamePage() {
 
       <main className="max-w-7xl mx-auto px-4 py-12 flex-1">
         {/* Game Header */}
-        <div className="mb-8 flex justify-center">
-          <GoogleAd />
-          <BannerAd />
+        {/* <HorizontalAd /> */}
+        <div className="items-center m-2">
+          <GptAd />
         </div>
+
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{game.name}</h1>
           <div className="flex flex-wrap items-center gap-4">
@@ -191,8 +191,8 @@ export default function GamePage() {
           <h2 className="text-2xl font-bold text-white mb-4">Game Statistics</h2>
           <GameStats game={game} />
         </div>
-        <div className="mb-8 flex justify-center">
-          <ThreeAd />
+        <div className="items-center m-2">
+          <BannerAd />
         </div>
         <div className="mb-12 p-6 bg-slate-800/50 rounded-lg border border-purple-500/20">
           <h2 className="text-2xl font-bold text-white mb-4">About This Game</h2>
@@ -221,7 +221,10 @@ export default function GamePage() {
             </div>
           )}
         </div>
-        <GptAd />
+        {/* <HorizontalAd /> */}
+        <div className="items-center m-2">
+          <ThreeAd />
+        </div>
         {/* Related Games */}
         {relatedGames.length > 0 && (
           <div>
